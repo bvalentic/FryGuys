@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<form action="">
+    First name: <input type="text" name="firstName" /> <br>
+    Last name: <input type="text" name="lastName" /> <br>
+    Age: <input type="number" name="age" min="21"/> <br>
+    Birthday: <input type="date" name="birthday" /> <br>
+
+    Gender: <input type="radio" name="gender" value="male"> Male
+    <input type="radio" name="gender" value="female"> Female
+    <input type="radio" name="gender" value="other"> Other 
+    <input type="radio" name="gender" value="prefer not to answer" checked> Prefer not to answer <br>
+
+    Username: <input type="text" name="userName" /> <br>
+    Email: <input type="email" name="email" /> <br>
+
+    Password: <input type="password" name="password" /> <br>
+    Confirm password: <input type="password" name="passwordConfirm" /> <br>
+    <input type="submit" value="Sign up" />
+    <input type="reset" />
+</form>
+
