@@ -44,5 +44,12 @@ namespace FryGuys.Controllers
 
             return View();
         }
+
+        public ActionResult RegisterConfirm(string firstName)
+        {
+            ViewBag.Message = "Hello, " + firstName + "! Welcome to the Fryer's Club!";
+
+            return View();
+        }
     }
 }

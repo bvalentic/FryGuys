@@ -5,10 +5,10 @@
 
 <h2>@ViewBag.Title</h2>
 
-<form action="">
-    First name: <input type="text" name="firstName" /> <br>
-    Last name: <input type="text" name="lastName" /> <br>
-    Age: <input type="number" name="age" min="21"/> <br>
+<form action="/Home/RegisterConfirm/" method="post">
+    First name:* <input type="text" name="firstName" required/> <br>
+    Last name:* <input type="text" name="lastName" required/> <br>
+    Age:* <input type="number" name="age" min="21" required/> <br>
     Birthday: <input type="date" name="birthday" /> <br>
 
     Gender: <input type="radio" name="gender" value="male"> Male
@@ -16,11 +16,12 @@
     <input type="radio" name="gender" value="other"> Other 
     <input type="radio" name="gender" value="prefer not to answer" checked> Prefer not to answer <br>
 
-    Username: <input type="text" name="userName" /> <br>
-    Email: <input type="email" name="email" /> <br>
+    Username:* <input type="text" name="userName" required/> <br>
+    Email:* <input type="email" name="email" required/> <br>
 
-    Password: <input type="password" name="password" /> <br>
-    Confirm password: <input type="password" name="passwordConfirm" /> <br>
+    Password:* <input type="password" name="password" required/> <br>
+    Confirm password:* <input type="password" name="passwordConfirm" required/> <br>
+    <p>(fields marked with * are required)</p>
     <input type="submit" value="Sign up" />
     <input type="reset" />
 </form>
