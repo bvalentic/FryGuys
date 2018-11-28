@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Text.RegularExpressions;
 
 namespace FryGuys.Controllers
 {
@@ -46,14 +47,23 @@ namespace FryGuys.Controllers
 
         public ActionResult RegisterConfirm(string firstName, string password, string passwordConfirm)
         {
+            ViewBag.ErrorMessage = "";
+
+            if (Regex.IsMatch(firstName,@"\W"))
+            {
+                ViewBag.ErrorMessage += "Invalid first name input. Please make sure there are no numbers or " +
+                    "special characters in the field when submitting.\n";
+            }
+
             if (password != null && passwordConfirm != null)
             {
                 if (password != passwordConfirm)
                 {
-                    ViewBag.Message = "Please make sure your password is correct before continuing.";
+                    ViewBag.ErrorMessage += "Please make sure your password is correct before continuing.\n";
                     return View("Register");
                 }
             }
+
             if (firstName == null)
             {
                 firstName = "user";
