@@ -2,29 +2,33 @@
     ViewBag.Title = "Home";
 }
 
-<div class="jumbotron">
-    <h1>Fry Guys</h1>
-    <p class="lead">Fry Guys is a bar and grill specializing in serving up gourmet French fries.</p>
-    <p><a href="/Home/About" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="jumbotron" style="background-image: url('../../Images/Fries_Banner.jpg')">
+    <div class="row img-rounded" style="background-color:rgba(218, 165, 32, 0.75)">
+        <h1 class="text-center">Fry Guys</h1>
+        <p class="lead text-center">Fry Guys is a bar and grill specializing in serving up gourmet French fries.</p>
+        <p class="text-center"><a href="/Home/About" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Choose your fries</h2>
-        <p>
-            Build a platter of French fries. Customize your whole order -
-            from the cut and cooking style, to the sauce and seasoning, even down to what oil you want to use!
-        </p>
-        <p><a class="btn btn-default" href="/Home/Order/">Get to fryin' &raquo;</a></p>
+    <div class="jumbotron img-fluid" style="background-image:url('../../Images/Restaurant_Interior.jpg')">
+        <div class="row img-rounded" style="background-color:rgba(218, 165, 32, 0.80)">
+            <div class="col-md-4">
+                <h2>Choose your fries</h2>
+                <small>
+                    Build a platter of French fries. Customize your whole order -
+                    from the cut and cooking style, to the sauce and seasoning, even down to what oil you want to use!
+                </small>
+                <p><a class="btn btn-default" href="/Home/Order/">Get to fryin' &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>About/Location</h2>
+                <small>Located in the Motor City, Fry Guys has been a Detroit institution since late November 2018!</small>
+                <p><a class="btn btn-default" href="/Home/Contact/">Find us &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Join the Fryer's Club</h2>
+                <small>The Fryer's Club is our rewards program. Register now to receive special promos, deals, and merch!</small>
+                <p><a class="btn btn-default" href="/Home/Join/">Sign up &raquo;</a></p>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>About/Location</h2>
-        <p>Located in the Motor City, Fry Guys has been a Detroit institution since late November 2018!</p>
-        <p><a class="btn btn-default" href="/Home/Contact/">Find us &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Join the Fryer's Club</h2>
-        <p>The Fryer's Club is our rewards program. Register now to receive special promos, deals, and merch!</p>
-        <p><a class="btn btn-default" href="/Home/Join/">Sign up &raquo;</a></p>
-    </div>
-</div>

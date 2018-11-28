@@ -7,7 +7,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
+<body style="background-image:url(../../Images/Red_Tablecloth.jpg)">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -33,7 +33,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Fry Guys</p>
+            <p class="container-fluid row img-rounded" style="background-color:gainsboro">&copy; @DateTime.Now.Year - Fry Guys</p>
         </footer>
     </div>
 

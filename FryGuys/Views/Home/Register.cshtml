@@ -3,26 +3,56 @@
     ViewBag.Title = "Register";
 }
 
-<h2>@ViewBag.Title</h2>
+<h2 class="container-fluid row img-rounded" style="background-color:gainsboro">@ViewBag.Title</h2>
 
-<form action="/Home/RegisterConfirm/" method="post">
-    First name:* <input type="text" name="firstName" required/> <br>
-    Last name:* <input type="text" name="lastName" required/> <br>
-    Age:* <input type="number" name="age" min="21" required/> <br>
-    Birthday: <input type="date" name="birthday" /> <br>
+<div class="container-fluid img-rounded" style="background-color:gainsboro">
+<form action="/Home/RegisterConfirm/" method="post" class="form-horizontal">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="firstName" class="mr-sm-2">First name:</label>
+        <input type="text" name="firstName" class="form-control mb-2 mr-sm-2" required /></div> <br>
+        <div class="form-group">
+            <label for="firstName" class="mr-sm-2">Last name:</label>
+        <input type="text" name="lastName" class="form-control mb-2 mr-sm-2" required /></div> <br>
+        <div class="form-group">
+            <label for="age" class="mr-sm-2">Age:</label>
+        <input type="number" name="age" min="21" class="form-control mb-2 mr-sm-2" required /></div> <br>
+        <div class="form-group">
+            Birthday:
+        <input type="date" name="birthday" class="form-control mb-2 mr-sm-2"/></div> <br>
+        
+        <div class="form-group">
+            Phone number:
+            <input type="number" name="phone" class="form-control mb-2 mr-sm-2"/>
+        </div> <br>
 
-    Gender: <input type="radio" name="gender" value="male"> Male
-    <input type="radio" name="gender" value="female"> Female
-    <input type="radio" name="gender" value="other"> Other 
-    <input type="radio" name="gender" value="prefer not to answer" checked> Prefer not to answer <br>
+        <div class="form-group">
+            Gender:
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <input type="radio" name="gender" value="other"> Other
+        <input type="radio" name="gender" value="prefer not to answer" checked> Prefer not to answer </div>
+            <br>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="username" class="mr-sm-2">Username:</label>
+        <input type="text" name="userName" class="form-control mb-2 mr-sm-2" required /> </div> <br>
+        <div class="form-group">
+            <label for="email" class="mr-sm-2">Email:</label>
+        <input type="email" name="email" class="form-control mb-2 mr-sm-2" required /> </div> <br>
 
-    Username:* <input type="text" name="userName" required/> <br>
-    Email:* <input type="email" name="email" required/> <br>
-
-    Password:* <input type="password" name="password" required/> <br>
-    Confirm password:* <input type="password" name="passwordConfirm" required/> <br>
-    <p>(fields marked with * are required)</p>
+        <div class="form-group">
+            <label for="password" class="mr-sm-2">Password:</label>
+        <input type="password" name="password" class="form-control mb-2 mr-sm-2" required /> </div> <br>
+        <div class="form-group">
+            <label for="password confirm" class="mr-sm-2">Confirm password:</label>
+        <input type="password" name="passwordConfirm" class="form-control mb-2 mr-sm-2" required /> </div> <br>
+    </div>
+    <p>(fields in bold are required)</p>
     <input type="submit" value="Sign up" />
     <input type="reset" />
+    <p class="text-danger">@ViewBag.Message</p>
 </form>
+</div>
 

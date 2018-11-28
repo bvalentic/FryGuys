@@ -41,13 +41,24 @@ namespace FryGuys.Controllers
 
         public ActionResult Register()
         {
-
             return View();
         }
 
-        public ActionResult RegisterConfirm(string firstName)
+        public ActionResult RegisterConfirm(string firstName, string password, string passwordConfirm)
         {
-            ViewBag.Message = "Hello, " + firstName + "! Welcome to the Fryer's Club!";
+            if (password != null && passwordConfirm != null)
+            {
+                if (password != passwordConfirm)
+                {
+                    ViewBag.Message = "Please make sure your password is correct before continuing.";
+                    return View("Register");
+                }
+            }
+            if (firstName == null)
+            {
+                firstName = "user";
+            }
+            ViewBag.Message = "Hello, " + firstName + "!\n Welcome to the Fryer's Club!";
 
             return View();
         }

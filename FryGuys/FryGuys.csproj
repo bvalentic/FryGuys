@@ -141,6 +141,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Fries_1000.jpg" />
+    <Content Include="Images\Fries_Banner.jpg" />
+    <Content Include="Images\Fries_barbecue_spice.jpg" />
+    <Content Include="Images\Fries_Confirmation.jpeg" />
+    <Content Include="Images\Fries_medium_shallow.jpg" />
+    <Content Include="Images\Fries_plate.jpg" />
+    <Content Include="Images\Fries_sweet_potato.jpg" />
+    <Content Include="Images\Fries_thick_close.jpg" />
+    <Content Include="Images\Red_Tablecloth.jpg" />
+    <Content Include="Images\Restaurant_Interior.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
