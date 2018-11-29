@@ -1,23 +1,25 @@
 ﻿
-function myFunction() {
-    var x = document.getElementById("myText").value;
-    document.getElementById("demo").innerHTML = x;
-}
-
 function validateForm() {
     var noError = true;
-    noError = validateFirstName();
+    var errorString = "";
+    errorString += validateFirstName(noError);
+    if (noError) {
+
+    }
+    else {
+
+    }
 }
 
-function validateFirstName() {
-    var testName = document.getElementById('firstName');
+function validateFirstName(noError) {
     var firstName = document.getElementById("firstName").value;
-    var regEx = new RegExp(/[A-Za-z]+[\s][A-Za-z]+/);
-    if (firstName !== null) {
-        alert('Hi, ' + firstName)
-    };
-    if (regEx.lastIndex !== null) {
+    var regEx = /[\W]*[\d]*[\W]*/;
+
+    if (regEx.test(firstName)) {
         alert('non-letter found')
-        return false;
+        noError = false;
+        return "First name entry invalid. \n"
     };
 }
+
+
