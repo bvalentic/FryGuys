@@ -7,7 +7,10 @@ function validateForm() {
 
     if (errorString.length >= 1) {
         alert(errorString);
-        window.location.href = '@Url.Content("~/Home/Register/")';
+        return false;
+    }
+    else {
+        return true;
     }
     
 }

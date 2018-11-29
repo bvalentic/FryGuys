@@ -2,7 +2,17 @@
     ViewBag.Title = "Home";
 }
 
-<div class="jumbotron" style="background-image: url('../../Images/Fries_Banner.jpg')">
+<style>
+    .parallax {
+        min-height: 300px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+<div class="jumbotron parallax" style="background-image: url('../../Images/Fries_Banner.jpg')">
     <div class="row img-rounded" style="background-color:rgba(218, 165, 32, 0.75)">
         <h1 class="text-center">Fry Guys</h1>
         <p class="lead text-center">Fry Guys is a bar and grill specializing in serving up gourmet French fries.</p>
@@ -10,7 +20,7 @@
     </div>    
 </div>
 
-    <div class="jumbotron img-fluid" style="background-image:url('../../Images/Restaurant_Interior.jpg')">
+    <div class="jumbotron img-fluid parallax" style="background-image:url('../../Images/Restaurant_Interior.jpg')">
         <div class="row img-rounded" style="background-color:rgba(218, 165, 32, 0.85)">
             <div class="col-md-4">
                 <h2>Choose your fries</h2>

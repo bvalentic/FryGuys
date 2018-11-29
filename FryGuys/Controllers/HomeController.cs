@@ -45,10 +45,10 @@ namespace FryGuys.Controllers
             return View();
         }
 
-        public ActionResult RegisterConfirm(string firstName, string password, string passwordConfirm)
+        public ActionResult RegisterConfirm(string errorString, string firstName, string password, string passwordConfirm)
         {
             bool noError = true;
-            ViewBag.ErrorMessage = ViewBag.errorString;
+            ViewBag.ErrorMessage = errorString;
 
             if (firstName == null)
             {
