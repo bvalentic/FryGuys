@@ -1,25 +1,37 @@
 ﻿
 function validateForm() {
-    var noError = true;
     var errorString = "";
-    errorString += validateFirstName(noError);
-    if (noError) {
 
-    }
-    else {
+    errorString += validateFirstName();
+    errorString += validateLastName();
 
+    if (errorString.length >= 1) {
+        alert(errorString);
+        window.location.href = '@Url.Content("~/Home/Register/")';
     }
+    
 }
 
-function validateFirstName(noError) {
+function validateFirstName() {
     var firstName = document.getElementById("firstName").value;
-    var regEx = /[\W]*[\d]*[\W]*/;
+    var regEx = /[^a-zA-Z]+/;
 
     if (regEx.test(firstName)) {
-        alert('non-letter found')
-        noError = false;
-        return "First name entry invalid. \n"
-    };
+        return "First name entry invalid. \n";
+    }
+    else {
+        return "";
+    }
 }
 
+function validateLastName() {
+    var lastName = document.getElementById("lastName").value;
+    var regEx = /[^a-zA-Z]+/;
 
+    if (regEx.test(lastName)) {
+        return "Last name entry invalid. \n";
+    }
+    else {
+        return "";
+    }
+}

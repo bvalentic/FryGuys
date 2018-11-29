@@ -56,13 +56,6 @@ namespace FryGuys.Controllers
             }
             ViewBag.Message = "Hello, " + firstName + "!\n Welcome to the Fryer's Club!";
 
-            if (!Regex.IsMatch(firstName, @"[A-Za-z]"))
-            {
-                ViewBag.ErrorMessage += "Invalid first name input. Please make sure there are no numbers or " +
-                    "special characters in the field when submitting.\n";
-                noError = false;
-            }
-
             if (password != null && passwordConfirm != null)
             {
                 if (password != passwordConfirm)
