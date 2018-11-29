@@ -48,7 +48,7 @@ namespace FryGuys.Controllers
         public ActionResult RegisterConfirm(string firstName, string password, string passwordConfirm)
         {
             bool noError = true;
-            ViewBag.ErrorMessage = "";
+            ViewBag.ErrorMessage = ViewBag.errorString;
 
             if (firstName == null)
             {
