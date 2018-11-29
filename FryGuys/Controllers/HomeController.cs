@@ -47,12 +47,20 @@ namespace FryGuys.Controllers
 
         public ActionResult RegisterConfirm(string firstName, string password, string passwordConfirm)
         {
+            bool noError = true;
             ViewBag.ErrorMessage = "";
 
-            if (Regex.IsMatch(firstName,@"\W"))
+            if (firstName == null)
+            {
+                firstName = "user";
+            }
+            ViewBag.Message = "Hello, " + firstName + "!\n Welcome to the Fryer's Club!";
+
+            if (!Regex.IsMatch(firstName, @"[A-Za-z]"))
             {
                 ViewBag.ErrorMessage += "Invalid first name input. Please make sure there are no numbers or " +
                     "special characters in the field when submitting.\n";
+                noError = false;
             }
 
             if (password != null && passwordConfirm != null)
@@ -60,15 +68,14 @@ namespace FryGuys.Controllers
                 if (password != passwordConfirm)
                 {
                     ViewBag.ErrorMessage += "Please make sure your password is correct before continuing.\n";
-                    return View("Register");
+                    noError = false;
                 }
             }
 
-            if (firstName == null)
+            if (!noError)
             {
-                firstName = "user";
+                return View("Register");
             }
-            ViewBag.Message = "Hello, " + firstName + "!\n Welcome to the Fryer's Club!";
 
             return View();
         }

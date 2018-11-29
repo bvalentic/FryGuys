@@ -73,8 +73,8 @@ C:\Users\bvalentic\source\repos\FryGuys\FryGuys\bin\Antlr3.Runtime.pdb
 C:\Users\bvalentic\source\repos\FryGuys\FryGuys\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\bvalentic\source\repos\FryGuys\FryGuys\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\bvalentic\source\repos\FryGuys\FryGuys\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\bvalentic\source\repos\FryGuys\FryGuys\obj\Debug\FryGuys.csprojAssemblyReference.cache
 C:\Users\bvalentic\source\repos\FryGuys\FryGuys\obj\Debug\FryGuys.csproj.CoreCompileInputs.cache
 C:\Users\bvalentic\source\repos\FryGuys\FryGuys\obj\Debug\FryGuys.csproj.CopyComplete
 C:\Users\bvalentic\source\repos\FryGuys\FryGuys\obj\Debug\FryGuys.dll
 C:\Users\bvalentic\source\repos\FryGuys\FryGuys\obj\Debug\FryGuys.pdb
+C:\Users\bvalentic\source\repos\FryGuys\FryGuys\obj\Debug\FryGuys.csprojAssemblyReference.cache
