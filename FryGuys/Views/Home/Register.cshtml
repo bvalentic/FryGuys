@@ -31,7 +31,7 @@
         </div> <br>
 
         <div class="form-group">
-            <fieldset style="background-color:rgba(150, 150, 150, 0.95)">
+            <fieldset>
                 <legend class="h5">Gender:</legend>
                 <input type="radio" name="gender" value="male"> Male
                 <input type="radio" name="gender" value="female"> Female
@@ -61,7 +61,10 @@
         <fieldset>
             <div class="form-group">
                 <label for="password" class="mr-sm-2">Password:</label>
-            <input type="password" name="password" id="password" class="form-control mb-2 mr-sm-2" required /> </div> <br>
+            <input type="password" name="password" id="password" class="form-control mb-2 mr-sm-2" required /> 
+                <p>Password must be 8 characters, 
+                contain an upper- and lower-case letter, and at least one number</p>
+                </div> <br>
 
             <div class="form-group">
                 <label for="password confirm" class="mr-sm-2">Confirm password:</label>

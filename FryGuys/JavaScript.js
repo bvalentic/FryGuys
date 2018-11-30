@@ -4,6 +4,7 @@ function validateForm() {
 
     errorString += validateFirstName();
     errorString += validateLastName();
+    errorString += validatePassword();
 
     if (errorString.length >= 1) {
         alert(errorString);
@@ -37,4 +38,23 @@ function validateLastName() {
     else {
         return "";
     }
+}
+
+function validatePassword() {
+    var password = document.getElementById("password").value;
+    var passwordConfirm = document.getElementById("passwordConfirm").value;
+    var errorString = "";
+
+    if (/[^a-z]/.test(password) || /[^A-Z]/.test(password) || /[^0-9]/.test(password)) {
+        errorString += "Password does not follow proper format. \n"
+    }
+
+    if (password.length < 8) {
+        errorString += "Password less than 8 characters. \n";
+    }
+
+    if (password !== passwordConfirm) {
+        errorString += "Passwords do not match. \n";
+    }
+    return errorString;
 }
