@@ -7,6 +7,48 @@
         <h2>Registration Confirmed</h2>
 
         <h4>@ViewBag.Message</h4>
+
+        <div>
+            <h4>Here's what we've got:</h4>
+            <ul>
+                <li>Name: @Model.FirstName @Model.LastName</li>
+                @{
+                    if (Model.Age != null)
+                    {
+                        <li>Age: @Model.Age</li>
+                    }
+                }
+                <li>Username: @Model.Username</li>
+                <li>Email: @Model.Email</li>
+                @{
+                    if (Model.GetEmail)
+                    {
+                        <ul><li>You have opted in to promotional emails</li></ul>
+                    }
+                    else if (!Model.GetEmail)
+                    {
+                        <ul><li>You have opted out of promotional emails</li></ul>
+                    }
+
+                    if (Model.Birthday != null)
+                    {
+                        <li>Birthday: @Model.Birthday</li>
+                    }
+
+                    if (Model.Phone != null)
+                    {
+                        <li>Phone number: @Model.Phone</li>
+                    }
+
+                    if (Model.Gender != "Prefer not to answer")
+                    {
+                        <li>Gender: @Model.Gender</li>
+                    }
+                }
+
+            </ul>
+        </div>
+
         <p><a href="/Home/" class="btn btn-primary">Back to home &raquo;</a></p>
     </div>
 </div>

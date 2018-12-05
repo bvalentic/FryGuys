@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Text.RegularExpressions;
+using FryGuys.Models;
 
 namespace FryGuys.Controllers
 {
@@ -45,15 +46,20 @@ namespace FryGuys.Controllers
             return View();
         }
 
-        public ActionResult RegisterConfirm(string firstName, string password, string passwordConfirm)
+        public ActionResult RegisterConfirm(User user)
         {
-            if (firstName == null)
-            {
-                firstName = "user";
-            }
-            ViewBag.Message = "Hello, " + firstName + "!\n Welcome to the Fryer's Club!";
+            //if (user.FirstName == null)
+            //{
+            //    user.FirstName = "user";
+            //}
+            ViewBag.Message = "Hello, " + user.FirstName + "!\n Welcome to the Fryer's Club!";
 
-            return View();
+            return View(user);
+        }
+
+        public ActionResult UserInfo(User user)
+        {
+            return View(user);
         }
     }
 }

@@ -1,19 +1,19 @@
 ﻿
 function validateForm() {
-    var errorString = "";
+    var numError = 0;
 
-    errorString += validateFirstName();
-    errorString += validateLastName();
-    errorString += validatePassword();
+    numError += validateFirstName();
+    numError += validateLastName();
+    numError += validateEmail();
+    numError += validatePhone();
+    numError += validatePassword();
 
-    if (errorString.length >= 1) {
-        alert(errorString);
+    if (numError > 0) {
         return false;
     }
     else {
         return true;
     }
-    
 }
 
 function validateFirstName() {
@@ -21,10 +21,12 @@ function validateFirstName() {
     var regEx = /[^a-zA-Z]+/;
 
     if (regEx.test(firstName)) {
-        return "First name entry invalid. \n";
+        document.getElementById("firstNameError").classList.remove("hidden");
+        return 1;
     }
     else {
-        return "";
+        document.getElementById("firstNameError").classList.add("hidden");
+        return 0;
     }
 }
 
@@ -33,28 +35,70 @@ function validateLastName() {
     var regEx = /[^a-zA-Z]+/;
 
     if (regEx.test(lastName)) {
-        return "Last name entry invalid. \n";
+        document.getElementById("lastNameError").classList.remove("hidden");
+        return 1;
     }
     else {
-        return "";
+        document.getElementById("lastNameError").classList.add("hidden")
+        return 0;
+    }
+}
+
+function validateEmail() {
+    var email = document.getElementById("email").value;
+    var regEx = /^([a-zA-Z0-9_\-\.]+)\@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+
+    if (!regEx.test(email)) {
+        document.getElementById("emailError").classList.remove("hidden");
+        return 1
+    }
+    else {
+        document.getElementById("emailError").classList.add("hidden");
+        return 0;
+    }
+}
+
+function validatePhone() {
+    var phone = document.getElementById("phone").value;
+    var regEx = /[\d]{3}-[\d]{3}-[\d]{4}/;
+    if (!regEx.test(phone)) {
+        document.getElementById("phoneError").classList.remove("hidden");
+        return 1
+    }
+    else {
+        document.getElementById("phoneError").classList.add("hidden");
+        return 0;
     }
 }
 
 function validatePassword() {
     var password = document.getElementById("password").value;
     var passwordConfirm = document.getElementById("passwordConfirm").value;
-    var errorString = "";
+    var regEx = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    var numError = 0;
 
-    if (/[^a-z]/.test(password) || /[^A-Z]/.test(password) || /[^0-9]/.test(password)) {
-        errorString += "Password does not follow proper format. \n"
+    if (!regEx.test(password) && password.length >= 8) {
+        document.getElementById("passwordError").classList.remove("hidden");
+        numError += 1;
+    }
+    else if (!(!regEx.test(password) && password.length >= 8)) {
+        document.getElementById("passwordError").classList.add("hidden");
     }
 
     if (password.length < 8) {
-        errorString += "Password less than 8 characters. \n";
+        document.getElementById("passwordLengthError").classList.remove("hidden");
+        numError += 1;
+    }
+    else if (!(password.length < 8)) {
+        document.getElementById("passwordLengthError").classList.add("hidden");       
     }
 
     if (password !== passwordConfirm) {
-        errorString += "Passwords do not match. \n";
+        document.getElementById("passwordMatchError").classList.remove("hidden");
+        numError += 1;
     }
-    return errorString;
+    else if (!(password !== passwordConfirm)) {
+        document.getElementById("passwordMatchError").classList.add("hidden");
+    }
+    return numError;
 }
