@@ -48,10 +48,6 @@ namespace FryGuys.Controllers
 
         public ActionResult RegisterConfirm(User user)
         {
-            //if (user.FirstName == null)
-            //{
-            //    user.FirstName = "user";
-            //}
             ViewBag.Message = "Hello, " + user.FirstName + "!\n Welcome to the Fryer's Club!";
 
             return View(user);
@@ -60,6 +56,46 @@ namespace FryGuys.Controllers
         public ActionResult UserInfo(User user)
         {
             return View(user);
+        }
+
+        public ActionResult SaveUser(User user)
+        {
+            FryGuysDBEntities DB = new FryGuysDBEntities();
+
+            if (user != null)
+            {
+                DB.Users.Add(user);
+                DB.SaveChanges();
+            }
+            return RedirectToAction("RegisterConfirm", user);
+        }
+
+        public ActionResult ViewUsers(User user)
+        {
+            FryGuysDBEntities DB = new FryGuysDBEntities();
+            ViewBag.UserList = DB.Users.ToList();
+
+            return View();
+        }
+
+        public ActionResult SaveOrder(Fry fry)
+        {
+            FryGuysDBEntities1 DB = new FryGuysDBEntities1();
+
+            if (fry != null)
+            {
+                DB.Fries.Add(fry);
+                DB.SaveChanges();
+            }
+
+            return RedirectToAction("OrderConfirm", fry);
+        }
+
+        public ActionResult OrderConfirm(Fry fry)
+        {
+
+
+            return View();
         }
     }
 }

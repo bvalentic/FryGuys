@@ -78,3 +78,7 @@ C:\Users\bvalentic\source\repos\FryGuys\FryGuys\obj\Debug\FryGuys.csproj.CopyCom
 C:\Users\bvalentic\source\repos\FryGuys\FryGuys\obj\Debug\FryGuys.dll
 C:\Users\bvalentic\source\repos\FryGuys\FryGuys\obj\Debug\FryGuys.pdb
 C:\Users\bvalentic\source\repos\FryGuys\FryGuys\obj\Debug\FryGuys.csprojAssemblyReference.cache
+C:\Users\bvalentic\source\repos\FryGuys\FryGuys\bin\EntityFramework.dll
+C:\Users\bvalentic\source\repos\FryGuys\FryGuys\bin\EntityFramework.SqlServer.dll
+C:\Users\bvalentic\source\repos\FryGuys\FryGuys\bin\EntityFramework.xml
+C:\Users\bvalentic\source\repos\FryGuys\FryGuys\bin\EntityFramework.SqlServer.xml

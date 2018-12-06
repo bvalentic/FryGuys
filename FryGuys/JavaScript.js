@@ -102,3 +102,36 @@ function validatePassword() {
     }
     return numError;
 }
+
+function GetValues() {
+    var potato = findValue(".potato");
+    var cut = findValue(".cut");
+    var cook = findValue(".cook");
+
+    alert("Potato: " + potato +"\nCut: " + cut + "\nCook: " + cook);
+}
+
+function findValue(string) {
+    var classesNodeList = document.querySelectorAll(string);
+    var checkedValue;
+
+    for (var i = 0; i < classesNodeList.length; i++) {
+        if (classesNodeList[i].checked == true) {
+            checkedValue = classesNodeList[i].value;
+        }
+    }
+
+    //alert(checkedValue);
+    return checkedValue; 
+
+}
+
+//jquery stuff to select div as radio button:
+
+//$('.radio-group .radio').click(function () {
+//    $(this).parent().find('.radio').removeClass('selected');
+//    $(this).addClass('selected');
+//    var val = $(this).attr('data-value');
+//    //alert(val);
+//    $(this).parent().find('input').val(val);
+//});
