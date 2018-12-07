@@ -23,6 +23,34 @@ namespace FryGuys.Controllers
             return View();
         }
 
+        public ActionResult AddUser()
+        {
+            return View();
+        }
+
+        public ActionResult SaveNewUser(User user)
+        {
+            FryGuysDBEntities DB = new FryGuysDBEntities();
+            
+            if (user != null)
+            {
+                DB.Users.Add(user);
+                DB.SaveChanges();
+            }
+
+            return RedirectToAction("ViewUsers");
+        }
+
+        public ActionResult EditUser()
+        {
+            return View();
+        }
+
+        public ActionResult DeleteUser()
+        {
+            return View();
+        }
+
         public ActionResult ViewOrders(Fry fry)
         {
             FryGuysDBEntities DB = new FryGuysDBEntities();

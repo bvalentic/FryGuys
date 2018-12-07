@@ -251,6 +251,7 @@
     <Content Include="Views\Admin\Main.cshtml" />
     <Content Include="Views\Admin\ViewUsers.cshtml" />
     <Content Include="Views\Admin\ViewOrders.cshtml" />
+    <Content Include="Views\Admin\AddUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
