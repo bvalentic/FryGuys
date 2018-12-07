@@ -25,6 +25,7 @@ namespace FryGuys.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Fry> Fries { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }
 }

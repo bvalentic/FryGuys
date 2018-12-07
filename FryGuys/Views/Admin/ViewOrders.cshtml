@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "View Orders";
+}
+<div class="container-fluid img-rounded" style="background-color:rgba(150, 150, 150, 0.95)">
+    <h2>View Orders</h2>
+
+    <table class="table">
+        <thead>
+            Users
+            <tr>
+                <th>Order ID:</th>
+                <th>Potato:</th>
+                <th>Cut:</th>
+                <th>Cooking style:</th>
+                <th>Seasoning:</th>
+                <th>Sauce:</th>
+                <th>Topping:</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in ViewBag.OrderList)
+            {
+                <tr>
+                    <td>@order.FryID</td>
+                    <td>@order.Potato</td>
+                    <td>@order.Cut</td>
+                    <td>@order.Cook</td>
+                    <td>@order.Season</td>
+                    <td>@order.Sauce</td>
+                    <td>@order.Topping</td>
+                    <td><a href="~/Admin/EditOrder?FryID=@order.FryID" class="btn-primary">Edit order info</a></td>
+                    <td><a href="~/Admin/DeleteOrder?FryID=@order.FryID" class="btn-warning">Delete order</a></td>
+                </tr>
+            }
+            <tr>
+                <td><a href="~/Admin/AddUser" class="btn-primary">Add order</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

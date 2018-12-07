@@ -46,18 +46,6 @@ namespace FryGuys.Controllers
             return View();
         }
 
-        public ActionResult RegisterConfirm(User user)
-        {
-            ViewBag.Message = "Hello, " + user.FirstName + "!\n Welcome to the Fryer's Club!";
-
-            return View(user);
-        }
-
-        public ActionResult UserInfo(User user)
-        {
-            return View(user);
-        }
-
         public ActionResult SaveUser(User user)
         {
             FryGuysDBEntities DB = new FryGuysDBEntities();
@@ -70,17 +58,16 @@ namespace FryGuys.Controllers
             return RedirectToAction("RegisterConfirm", user);
         }
 
-        public ActionResult ViewUsers(User user)
+        public ActionResult RegisterConfirm(User user)
         {
-            FryGuysDBEntities DB = new FryGuysDBEntities();
-            ViewBag.UserList = DB.Users.ToList();
+            ViewBag.Message = "Hello, " + user.FirstName + "!\n Welcome to the Fryer's Club!";
 
-            return View();
+            return View(user);
         }
 
         public ActionResult SaveOrder(Fry fry)
         {
-            FryGuysDBEntities1 DB = new FryGuysDBEntities1();
+            FryGuysDBEntities DB = new FryGuysDBEntities();
 
             if (fry != null)
             {
@@ -93,9 +80,7 @@ namespace FryGuys.Controllers
 
         public ActionResult OrderConfirm(Fry fry)
         {
-
-
-            return View();
+            return View(fry);
         }
     }
 }

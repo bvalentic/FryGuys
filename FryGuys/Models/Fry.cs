@@ -20,6 +20,6 @@ namespace FryGuys.Models
         public string Cook { get; set; }
         public string Season { get; set; }
         public string Sauce { get; set; }
-        public string Toppings { get; set; }
+        public string Topping { get; set; }
     }
 }

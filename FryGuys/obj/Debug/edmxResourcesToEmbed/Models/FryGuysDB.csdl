@@ -1,14 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="FryGuysDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Fry">
+    <Key>
+      <PropertyRef Name="FryID" />
+    </Key>
+    <Property Name="FryID" Type="Int32" Nullable="false" />
+    <Property Name="Potato" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Cut" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Cook" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Season" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sauce" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Topping" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="UserID" />
-      <PropertyRef Name="FirstName" />
-      <PropertyRef Name="LastName" />
-      <PropertyRef Name="Age" />
-      <PropertyRef Name="Username" />
-      <PropertyRef Name="Email" />
-      <PropertyRef Name="Password" />
     </Key>
     <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -23,6 +29,7 @@
     <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
   <EntityContainer Name="FryGuysDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Fries" EntityType="Self.Fry" />
     <EntitySet Name="Users" EntityType="Self.User" />
   </EntityContainer>
 </Schema>

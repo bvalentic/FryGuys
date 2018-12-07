@@ -1,6 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="FryGuysDBModelStoreContainer" CdmEntityContainer="FryGuysDBEntities">
+    <EntitySetMapping Name="Fries">
+      <EntityTypeMapping TypeName="FryGuysDBModel.Fry">
+        <MappingFragment StoreEntitySet="Fry">
+          <ScalarProperty Name="FryID" ColumnName="FryID" />
+          <ScalarProperty Name="Potato" ColumnName="Potato" />
+          <ScalarProperty Name="Cut" ColumnName="Cut" />
+          <ScalarProperty Name="Cook" ColumnName="Cook" />
+          <ScalarProperty Name="Season" ColumnName="Season" />
+          <ScalarProperty Name="Sauce" ColumnName="Sauce" />
+          <ScalarProperty Name="Topping" ColumnName="Topping" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="FryGuysDBModel.User">
         <MappingFragment StoreEntitySet="User">

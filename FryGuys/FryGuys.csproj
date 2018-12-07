@@ -134,40 +134,31 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Fry.cs">
-      <DependentUpon>Order.tt</DependentUpon>
+      <DependentUpon>FryGuysDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Order.Context.cs">
+    <Compile Include="Models\FryGuysDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Order.Context.tt</DependentUpon>
+      <DependentUpon>FryGuysDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Order.Designer.cs">
+    <Compile Include="Models\FryGuysDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Order.edmx</DependentUpon>
+      <DependentUpon>FryGuysDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\User.Context.cs">
+    <Compile Include="Models\FryGuysDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>User.Context.tt</DependentUpon>
+      <DependentUpon>FryGuysDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
-      <DependentUpon>User.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\User.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>User.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\User1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>User.tt</DependentUpon>
+      <DependentUpon>FryGuysDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -196,44 +187,28 @@
     <Content Include="Images\OrderImages\Potatoes\Russet.jpeg" />
     <Content Include="Images\OrderImages\Potatoes\SweetPotato.jpg" />
     <Content Include="Images\OrderImages\Potatoes\YukonGold.jpeg" />
+    <Content Include="Images\OrderImages\Sauce\None.jpg" />
     <Content Include="Images\Red_Tablecloth.jpg" />
     <Content Include="Images\Restaurant_Interior.jpg" />
     <Content Include="JavaScript.js" />
-    <Content Include="Models\Order.Context.tt">
+    <Content Include="Models\FryGuysDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Order.edmx</DependentUpon>
-      <LastGenOutput>Order.Context.cs</LastGenOutput>
+      <DependentUpon>FryGuysDB.edmx</DependentUpon>
+      <LastGenOutput>FryGuysDB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Order.tt">
+    <Content Include="Models\FryGuysDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Order.edmx</DependentUpon>
-      <LastGenOutput>Order.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\User.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>User.edmx</DependentUpon>
-      <LastGenOutput>User.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\User.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>User.edmx</DependentUpon>
-      <LastGenOutput>User1.cs</LastGenOutput>
+      <DependentUpon>FryGuysDB.edmx</DependentUpon>
+      <LastGenOutput>FryGuysDB.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\User.edmx">
+    <EntityDeploy Include="Models\FryGuysDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>User.Designer.cs</LastGenOutput>
+      <LastGenOutput>FryGuysDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\User.edmx.diagram">
-      <DependentUpon>User.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Models\Order.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Order.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Order.edmx.diagram">
-      <DependentUpon>Order.edmx</DependentUpon>
+    <Content Include="Models\FryGuysDB.edmx.diagram">
+      <DependentUpon>FryGuysDB.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -266,6 +241,16 @@
     <Content Include="Views\Home\RegisterConfirm.cshtml" />
     <Content Include="Views\Home\ViewUsers.cshtml" />
     <Content Include="Views\Home\OrderConfirm.cshtml" />
+    <Content Include="Views\ViewOrders.cshtml" />
+    <Content Include="Views\Home\ViewOrders.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Admin\Main.cshtml" />
+    <Content Include="Views\Admin\ViewUsers.cshtml" />
+    <Content Include="Views\Admin\ViewOrders.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

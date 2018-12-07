@@ -9,6 +9,10 @@
         border: solid thin;
     }
 
+    .orderContainer {
+        margin: 5px;
+    }
+
     .labl {
         display: block;        
     }
@@ -39,11 +43,11 @@
 </div>
 
 <div class="jumbotron" id="orderContainer" style="background-color:rgba(150, 150, 150, 0.95)">
-    <form method="post" action="/Home/SaveOrder/" onsubmit="GetValues()" style="background-color:rgba(218, 165, 32, 0.85)">
-        <div class="row img-rounded" style="background-color:rgba(218, 165, 32, 0.85)" id="potatoContainer">
-            <h2 class="text-center">Potato</h2>
+    <form method="post" action="/Home/SaveOrder/" >
+        <div class="row img-rounded orderContainer" style="background-color:rgba(218, 165, 32, 0.85)" id="potatoContainer">
+            <h2 class="text-center">Choose Your Potato</h2>
             <label class="labl">
-                <input type="radio" class="potato" name="potato" value="Yukon Gold" />
+                <input type="radio" class="potato" name="Potato" value="Yukon Gold" />
                 <div class="col-md-4 text-center selection" id="YukonGold" name="YukonGold" value="Yukon Gold">
                     <div class="header">
                         <h4>Yukon Gold</h4>
@@ -52,8 +56,9 @@
                     <div class="body">Description</div>
                 </div>
             </label>
+
             <label class="labl">
-                <input type="radio" class="potato" name="potato" value="Russet" />
+                <input type="radio" class="potato" name="Potato" value="Russet" />
                 <div class="col-md-4 text-center selection radio" id="Russet" name="Russet" value="Russet">
                     <div class="header">
                         <h4>Russet</h4>
@@ -63,7 +68,7 @@
                 </div>
             </label>
             <label class="labl">
-                <input type="radio" class="potato" name="potato" value="Sweet Potato" />
+                <input type="radio" class="potato" name="Potato" value="Sweet Potato" />
                 <div class="col-md-4 text-center selection radio">
                     <div class="header">
                         <h4>Sweet Potato</h4>
@@ -74,10 +79,10 @@
             </label>
         </div>
 
-        <div class="row img-rounded" style="background-color:rgba(218, 165, 32, 0.85)" id="cutContainer">
-            <h2 class="text-center">Cut</h2>
+        <div class="row img-rounded orderContainer" style="background-color:rgba(218, 165, 32, 0.85)" id="cutContainer">
+            <h2 class="text-center">Choose Your Cut</h2>
             <label class="labl">
-                <input type="radio" class="cut" name="cut" value="Standard cut" />
+                <input type="radio" class="cut" name="Cut" value="Standard cut" />
                 <div class="col-md-4 text-center selection" id="standardCut" name="standardCut" value="Standard Cut">
                     <div class="header">
                         <h4>Standard Cut</h4>
@@ -87,7 +92,7 @@
                 </div>
             </label>
             <label class="labl">
-                <input type="radio" class="cut" name="cut" value="Crinkle Cut" />
+                <input type="radio" class="cut" name="Cut" value="Crinkle Cut" />
                 <div class="col-md-4 text-center selection" id="crinkleCut" name="crinkleCut" value="Crinkle Cut">
                     <div class="header">
                         <h4>Crinkle Cut</h4>
@@ -98,10 +103,10 @@
             </label>
         </div>
 
-        <div class="row img-rounded" style="background-color:rgba(218, 165, 32, 0.85)">
-            <h2 class="text-center">Cook</h2>
+        <div class="row img-rounded orderContainer" style="background-color:rgba(218, 165, 32, 0.85)" id="cookContainer">
+            <h2 class="text-center">Choose Your Cooking Style</h2>
             <label class="labl">
-                <input type="radio" class="cook" name="cook" value="Undercooked" />
+                <input type="radio" class="cook" name="Cook" value="Undercooked" />
                 <div class="col-md-4 text-center selection" id="undercooked" name="undercooked" value="Undercooked">
                     <div class="header">
                         <h4>Undercooked</h4>
@@ -111,7 +116,7 @@
                 </div>
             </label>
             <label class="labl">
-                <input type="radio" class="cook" name="cook" value="Standard" />
+                <input type="radio" class="cook" name="Cook" value="Standard" />
                 <div class="col-md-4 text-center selection" id="standard" name="standard" value="Standard">
                     <div class="header">
                         <h4>Standard</h4>
@@ -121,7 +126,7 @@
                 </div>
             </label>
             <label class="labl">
-                <input type="radio" class="cook" name="cook" value="Well Done" />
+                <input type="radio" class="cook" name="Cook" value="Well Done" />
                 <div class="col-md-4 text-center selection" id="wellDone" name="wellDone" value="Well Done">
                     <div class="header">
                         <h4>Well Done</h4>
@@ -131,63 +136,52 @@
                 </div>
             </label>
         </div>
-        <div class="row img-rounded" style="background-color:rgba(218, 165, 32, 0.85)">
-            <h2 class="text-center">Seasonings</h2>
+
+        <div class="row img-rounded orderContainer" style="background-color:rgba(218, 165, 32, 0.85)" id="SeasonContainer">
+            <h2 class="text-center">Choose Your Seasonings</h2>
+            <label class="labl">
+                <input type="radio" class="season" name="Season" value="None" />
+                <div class="col-md-4 text-center selection radio" id="None" name="None" value="None">
+                    <div class="header">
+                        <h4>None</h4>
+                    </div>
+                    <img src="~/Images/OrderImages/Sauce/None.jpg" class="thumbnail center-block" />
+                    <div class="body">Description</div>
+                </div>
+            </label>
         </div>
-        <div class="row img-rounded" style="background-color:rgba(218, 165, 32, 0.85)">
-            <h2 class="text-center">Sauces</h2>
+
+        <div class="row img-rounded orderContainer" style="background-color:rgba(218, 165, 32, 0.85)" id="sauceContainer">
+            <h2 class="text-center">Choose Your Sauce</h2>
+            <label class="labl">
+                <input type="radio" class="sauce" name="Sauce" value="None" />
+                <div class="col-md-4 text-center selection radio" id="None" name="None" value="None">
+                    <div class="header">
+                        <h4>None</h4>
+                    </div>
+                    <img src="~/Images/OrderImages/Seasoning/None.jpg" class="thumbnail center-block" />
+                    <div class="body">Description</div>
+                </div>
+            </label>
         </div>
-        <div class="row img-rounded" style="background-color:rgba(218, 165, 32, 0.85)">
-            <h2 class="text-center">Toppings</h2>
+
+        <div class="row img-rounded orderContainer" style="background-color:rgba(218, 165, 32, 0.85)" id="toppingContainer">
+            <h2 class="text-center">Choose Your Toppings</h2>
+            <label class="labl">
+                <input type="radio" class="topping" name="Topping" value="None" />
+                <div class="col-md-4 text-center selection radio" id="None" name="None" value="None">
+                    <div class="header">
+                        <h4>None</h4>
+                    </div>
+                    <img src="~/Images/OrderImages/Topping/None.jpg" class="thumbnail center-block" />
+                    <div class="body">Description</div>
+                </div>
+            </label>
         </div>
+
         <input class="btn-primary" type="submit" value="Place Order" />
     </form>
 </div>
 
-    @*<div class="jumbotron" id="orderContainer" style="background-color:rgba(150, 150, 150, 0.95)">
-            <form method="post" onsubmit="tester()">
-                <div class="form-group row img-rounded text-center" id="Potato" style="background-color:rgba(218, 165, 32, 0.85)">
-                    <h2 class="text-center">Potato</h2>
-                    <div class="col-md-4 text-center selection radio labl option" id="YukonGold" name="YukonGold" value="Yukon Gold">
-                        <div class="header">
-                            <h4>Yukon Gold</h4>
-                        </div>
-                        <img src="~/Images/OrderImages/Potatoes/YukonGold.jpeg" class="thumbnail center-block" />
-                        <div class="body">Description</div>
-                    </div>
-                    <div class="col-md-4 text-center selection radio" id="Russet" name="Russet" value="Russet">
-                        <div class="header">
-                            <h4>Russet</h4>
-                        </div>
-                        <img src="~/Images/OrderImages/Potatoes/Russet.jpeg" class="thumbnail center-block" />
-                        <div class="body">Description</div>
-                    </div>
-                    <div class="col-md-4 text-center selection radio">
-                        <div class="header">
-                            <h4>Sweet Potato</h4>
-                        </div>
-                        <img src="~/Images/OrderImages/Potatoes/SweetPotato.jpg" class="thumbnail center-block" />
-                        <div class="body">Description</div>
-                    </div>
-                </div>
-                <div class="row img-rounded" style="background-color:rgba(218, 165, 32, 0.85)">
-                    <h2 class="text-center">Cut</h2>
-                </div>
-                <div class="row img-rounded" style="background-color:rgba(218, 165, 32, 0.85)">
-                    <h2 class="text-center">Cook</h2>
-                </div>
-                <div class="row img-rounded" style="background-color:rgba(218, 165, 32, 0.85)">
-                    <h2 class="text-center">Seasonings</h2>
-                </div>
-                <div class="row img-rounded" style="background-color:rgba(218, 165, 32, 0.85)">
-                    <h2 class="text-center">Sauces</h2>
-                </div>
-                <div class="row img-rounded" style="background-color:rgba(218, 165, 32, 0.85)">
-                    <h2 class="text-center">Toppings</h2>
-                </div>
-                <input class="btn-primary" type="submit" value="Place Order" />
-            </form>
-        </div>*@
-
-    <script type="text/javascript" src="~/JavaScript.js"></script>
+<script type="text/javascript" src="~/JavaScript.js"></script>
 

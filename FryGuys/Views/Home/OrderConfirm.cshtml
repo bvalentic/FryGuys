@@ -1,7 +1,37 @@
 ﻿
 @{
-    ViewBag.Title = "OrderConfirm";
+    ViewBag.Title = "Order Confirmed";
 }
+<div class="jumbotron" style="background-image:url('../../Images/Fries_Banner.jpg')">
+    <div class="container-fluid row img-rounded" style="background-color:gainsboro">
+        <h2>Order Confirmed</h2>
 
-<h2>OrderConfirm</h2>
+        <h4>@ViewBag.Message</h4>
 
+        <div>
+            <h4>Here's what we've got:</h4>
+            <ul>
+                <li>Order #@Model.FryID</li>
+                <li>Potato: @Model.Potato</li>
+                <li>Cut: @Model.Cut</li>
+                <li>Cooking style: @Model.Cook</li>
+                @if (Model.Season != null)
+                {
+                    <li>Seasoning: @Model.Season</li>
+                }
+                @if (Model.Sauce != null)
+                {
+                    <li>Sauce: @Model.Sauce</li>
+                }
+                @if (Model.Topping != null)
+                {
+                    <li>Toppings: @Model.Topping</li>
+                }
+            </ul>
+        </div>
+
+        <p><a href="/Home/" class="btn btn-primary">Back to home &raquo;</a></p>
+        <p><a href="/Home/" class="btn btn-primary">Edit your order &raquo;</a></p>
+        <p><a href="/Home/" class="btn btn-primary">Delete your order &raquo;</a></p>
+    </div>
+</div>
