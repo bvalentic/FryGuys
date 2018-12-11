@@ -8,18 +8,18 @@
     <form action="~/Admin/SaveNewUser/" method="post">
         <input type="hidden" name="UserID" />
         <label>First Name:</label>
-        <input type="text" name="FirstName" placeholder="First Name" id="firstName" required /> <br />
+        <input type="text" name="FirstName" placeholder="First Name" id="firstName" pattern="[a-zA-Z]+" required /> <br />
         <label>Last Name:</label>
-        <input type="text" name="LastName" placeholder="Last Name" id="lastName" required /> <br />
+        <input type="text" name="LastName" placeholder="Last Name" id="lastName" pattern="[a-zA-Z]+" required /> <br />
         <label>Age:</label>
         <input type="number" name="Age" placeholder="Age" required /> <br />
         <label>Birthday:</label>
         <input type="date" name="Birthday" required /> <br />
         <label>Phone Number:</label>
-        <input type="text" name="Phone" placeholder="xxx-xxx-xxxx" id="phone" /> <br />
+        <input type="text" name="Phone" placeholder="xxx-xxx-xxxx" id="phone" pattern="[\d]{3}-[\d]{3}-[\d]{4}"/> <br />
         <lable>Gender:</lable> <br />
         <label>Male</label>
-        <input type="radio" name="Gender" value="Male" required /> <br />
+        <input type="radio" name="Gender" value="Male" /> <br />
         <label>Female</label>
         <input type="radio" name="Gender" value="Female" /> <br />
         <label>Other</label>
@@ -27,14 +27,16 @@
         <label>Prefer not to answer</label>
         <input type="radio" name="Gender" value="Prefer not to answer" /> <br />
         <label>Username:</label>
-        <input type="text" name="Username" placeholder="Username" /> <br />
+        <input type="text" name="Username" placeholder="Username" required/> <br />
         <label>Email Address:</label>
-        <input type="text" name="Email" id="email" placeholder="Email address" /> <br />
+        <input type="text" name="Email" id="email" placeholder="Email address" 
+               pattern="([a-zA-Z0-9_\-\.]+)&#64([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required/> <br />
         <label>Get promo emails?</label>
         <input type="checkbox" name="GetEmail" id="getEmail" value="true" checked /> <br />
         <label>Password:</label>
-        <input type="text" name="Password" id="password" placeholder="Password" /> <br />
-
+        <input type="text" name="Password" id="password" placeholder="Password" 
+               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$" required/> <br />
+        
         <input type="submit" class="btn-info" />
     </form>
 </div>

@@ -13,6 +13,8 @@
         margin: 5px;
     }
 
+    /*css for selecting order items*/
+
     .labl {
         display: block;        
     }
@@ -44,6 +46,7 @@
 
 <div class="jumbotron" id="orderContainer" style="background-color:rgba(150, 150, 150, 0.95)">
     <form method="post" action="/Home/SaveOrder/" >
+        @*Potato*@
         <div class="row img-rounded orderContainer" style="background-color:rgba(218, 165, 32, 0.85)" id="potatoContainer">
             <h2 class="text-center">Choose Your Potato</h2>
             <label class="labl">
@@ -53,7 +56,7 @@
                         <h4>Yukon Gold</h4>
                     </div>
                     <img src="~/Images/OrderImages/Potatoes/YukonGold.jpeg" class="thumbnail center-block" />
-                    <div class="body">Description</div>
+                    <div class="body">Bright and slightly sweet, these all-purpose potatoes pack a powerful punch!</div>
                 </div>
             </label>
 
@@ -64,7 +67,8 @@
                         <h4>Russet</h4>
                     </div>
                     <img src="~/Images/OrderImages/Potatoes/Russet.jpeg" class="thumbnail center-block" />
-                    <div class="body">Description</div>
+                    <div class="body">The standard fried potato, russets are high in starch which helps them hold their shape 
+                    and deliver a crispy fry.</div>
                 </div>
             </label>
             <label class="labl">
@@ -74,11 +78,13 @@
                         <h4>Sweet Potato</h4>
                     </div>
                     <img src="~/Images/OrderImages/Potatoes/SweetPotato.jpg" class="thumbnail center-block" />
-                    <div class="body">Description</div>
+                    <div class="body">As the name implies, these potatoes have a very sweet taste to them. 
+                    We add cornstarch to our cuts to prevent the usual sogginess that sweet potato fries are infamous for.</div>
                 </div>
             </label>
         </div>
 
+        @*Cut*@
         <div class="row img-rounded orderContainer" style="background-color:rgba(218, 165, 32, 0.85)" id="cutContainer">
             <h2 class="text-center">Choose Your Cut</h2>
             <label class="labl">
@@ -88,7 +94,7 @@
                         <h4>Standard Cut</h4>
                     </div>
                     <img src="~/Images/OrderImages/Cut/StandardCut.jpg" class="thumbnail center-block" />
-                    <div class="body">Description</div>
+                    <div class="body">Evenly-cut, medium-thin. The common fry.</div>
                 </div>
             </label>
             <label class="labl">
@@ -98,11 +104,52 @@
                         <h4>Crinkle Cut</h4>
                     </div>
                     <img src="~/Images/OrderImages/Cut/CrinkleCut.jpg" class="thumbnail center-block" />
-                    <div class="body">Description</div>
+                    <div class="body">Thick-cut into wavy batons.</div>
+                </div>
+            </label>
+            <label class="labl">
+                <input type="radio" class="cut" name="Cut" value="Waffle" />
+                <div class="col-md-4 text-center selection" id="Waffle" name="Waffle" value="Waffle Fries">
+                    <div class="header">
+                        <h4>Waffle</h4>
+                    </div>
+                    <img src="~/Images/OrderImages/Cut/Waffle.jpg" class="thumbnail center-block" />
+                    <div class="body">Cut on a corrugated slicer, rotated 90 degrees after each cut to create a perforated "waffle".</div>
+                </div>
+            </label>
+            <label class="labl">
+                <input type="radio" class="cut" name="Cut" value="Steak" />
+                <div class="col-md-4 text-center selection" id="Steak" name="Steak" value="Steak Fries">
+                    <div class="header">
+                        <h4>Steak Fries</h4>
+                    </div>
+                    <img src="~/Images/OrderImages/Cut/Steak.jpg" class="thumbnail center-block" />
+                    <div class="body">Thick-cut fries.</div>
+                </div>
+            </label>
+            <label class="labl">
+                <input type="radio" class="cut" name="Cut" value="Shoestring" />
+                <div class="col-md-4 text-center selection" id="Shoestring" name="Shoestring" value="Shoestring">
+                    <div class="header">
+                        <h4>Shoestring</h4>
+                    </div>
+                    <img src="~/Images/OrderImages/Cut/Shoestring.jpg" class="thumbnail center-block" />
+                    <div class="body">Thin-sliced cut, which tend to crisp up more than a standard fry.</div>
+                </div>
+            </label>
+            <label class="labl">
+                <input type="radio" class="cut" name="Cut" value="Wedge" />
+                <div class="col-md-4 text-center selection" id="wedge" name="Wedge" value="Wedge">
+                    <div class="header">
+                        <h4>Wedge</h4>
+                    </div>
+                    <img src="~/Images/OrderImages/Cut/Wedge.jpg" class="thumbnail center-block" />
+                    <div class="body">Cut into thick slices at an angle to make a slightly triangular fry.</div>
                 </div>
             </label>
         </div>
 
+        @*Cook*@
         <div class="row img-rounded orderContainer" style="background-color:rgba(218, 165, 32, 0.85)" id="cookContainer">
             <h2 class="text-center">Choose Your Cooking Style</h2>
             <label class="labl">
@@ -112,7 +159,7 @@
                         <h4>Undercooked</h4>
                     </div>
                     <img src="~/Images/OrderImages/Cook/Undercooked.jpeg" class="thumbnail center-block" />
-                    <div class="body">Description</div>
+                    <div class="body">Soft, almost soggy, with a light yellow color.</div>
                 </div>
             </label>
             <label class="labl">
@@ -122,7 +169,7 @@
                         <h4>Standard</h4>
                     </div>
                     <img src="~/Images/OrderImages/Cook/Standard.jpg" class="thumbnail center-block" />
-                    <div class="body">Description</div>
+                    <div class="body">Crisp on the outside, soft on the inside. Not too soft, not too dry. Just right.</div>
                 </div>
             </label>
             <label class="labl">
@@ -132,25 +179,90 @@
                         <h4>Well Done</h4>
                     </div>
                     <img src="~/Images/OrderImages/Cook/WellDone.jpg" class="thumbnail center-block" />
-                    <div class="body">Description</div>
+                    <div class="body">Crunchy, with a golden-brown exterior.</div>
                 </div>
             </label>
         </div>
 
+        @*Seasoning*@
         <div class="row img-rounded orderContainer" style="background-color:rgba(218, 165, 32, 0.85)" id="SeasonContainer">
             <h2 class="text-center">Choose Your Seasonings</h2>
             <label class="labl">
-                <input type="radio" class="season" name="Season" value="None" />
-                <div class="col-md-4 text-center selection radio" id="None" name="None" value="None">
+                <input type="radio" class="season" name="SeasonNone" value="None" />
+                <div class="col-md-4 text-center selection radio" id="SeasonNone" name="SeasonNone" value="None">
                     <div class="header">
                         <h4>None</h4>
                     </div>
-                    <img src="~/Images/OrderImages/Sauce/None.jpg" class="thumbnail center-block" />
-                    <div class="body">Description</div>
+                    <img src="~/Images/OrderImages/Seasoning/None.jpg" class="thumbnail center-block" />
+                    <div class="body">Pure, unadulterated fries.</div>
+                </div>
+            </label>
+            <label class="labl">
+                <input type="radio" class="season" name="Season" value="Salt" />
+                <div class="col-md-4 text-center selection radio" id="Salt" name="Salt" value="Salt">
+                    <div class="header">
+                        <h4>Salt</h4>
+                    </div>
+                    <img src="~/Images/OrderImages/Seasoning/Salt.jpg" class="thumbnail center-block" />
+                    <div class="body">Sodium chloride. Makes fries tastier.</div>
+                </div>
+            </label>
+            <label class="labl">
+                <input type="radio" class="season" name="Season" value="Pepper" />
+                <div class="col-md-4 text-center selection radio" id="Pepper" name="Pepper" value="Pepper">
+                    <div class="header">
+                        <h4>Pepper</h4>
+                    </div>
+                    <img src="~/Images/OrderImages/Seasoning/Pepper.jpg" class="thumbnail center-block" />
+                    <div class="body">
+                        Add this for a bit of a kick while enhancing the flavor,
+                        or to make a cartoon character sneeze.
+                    </div>
+                </div>
+            </label>
+            <label class="labl">
+                <input type="radio" class="season" name="Season" value="Garlic" />
+                <div class="col-md-4 text-center selection radio" id="Salt" name="Garlic" value="Garlic Powder">
+                    <div class="header">
+                        <h4>Garlic Powder</h4>
+                    </div>
+                    <img src="~/Images/OrderImages/Seasoning/GarlicPowder.jpg" class="thumbnail center-block" />
+                    <div class="body">The classic garlic flavor, but sweeter and less assertive.</div>
+                </div>
+            </label>
+            <label class="labl">
+                <input type="radio" class="season" name="Season" value="Old Bay" />
+                <div class="col-md-4 text-center selection radio" id="OldBay" name="OldBay" value="Old Bay">
+                    <div class="header">
+                        <h4>Old Bay Seasoning</h4>
+                    </div>
+                    <img src="~/Images/OrderImages/Seasoning/OldBay.jpg" class="thumbnail center-block" />
+                    <div class="body">A blend of herbs and spices used for seafood seasoning, but lends itself to fries nicely.</div>
+                </div>
+            </label>
+            <label class="labl">
+                <input type="radio" class="season" name="Season" value="Cajun" />
+                <div class="col-md-4 text-center selection radio" id="Cajun" name="Cajun" value="Cajun">
+                    <div class="header">
+                        <h4>Cajun Seasoning</h4>
+                    </div>
+                    <img src="~/Images/OrderImages/Seasoning/Cajun.jpg" class="thumbnail center-block" />
+                    <div class="body">Hotter'n a junebug in a pepper patch on the Fourth of July!</div>
+                </div>
+            </label>
+            <label class="labl">
+                <input type="radio" class="season" name="Season" value="Not-Crack" />
+                <div class="col-md-4 text-center selection radio" id="NotCrack" name="NotCrack" value="Not-Crack">
+                    <div class="header">
+                        <h4>Not-Crack Fries</h4>
+                    </div>
+                    <img src="~/Images/OrderImages/Seasoning/CrackFries.png" class="thumbnail center-block" />
+                    <div class="body">A not-so-secret blend of salt, pepper, and parmesan we stole from that CatDog place.</div>
                 </div>
             </label>
         </div>
 
+        @*Sauce*@
         <div class="row img-rounded orderContainer" style="background-color:rgba(218, 165, 32, 0.85)" id="sauceContainer">
             <h2 class="text-center">Choose Your Sauce</h2>
             <label class="labl">
@@ -159,12 +271,76 @@
                     <div class="header">
                         <h4>None</h4>
                     </div>
-                    <img src="~/Images/OrderImages/Seasoning/None.jpg" class="thumbnail center-block" />
-                    <div class="body">Description</div>
+                    <img src="~/Images/OrderImages/Sauce/None.jpg" class="thumbnail center-block" />
+                    <div class="body">Pure, unadulterated fries.</div>
+                </div>
+            </label>
+            <label class="labl">
+                <input type="radio" class="sauce" name="Sauce" value="Ketchup" />
+                <div class="col-md-4 text-center selection radio" id="Ketchup" name="Ketchup" value="Ketchup">
+                    <div class="header">
+                        <h4>Ketchup</h4>
+                    </div>
+                    <img src="~/Images/OrderImages/Sauce/Ketchup.jpg" class="thumbnail center-block" />
+                    <div class="body">Ketchup sales are driven by french fries here in America.</div>
+                </div>
+            </label>
+            <label class="labl">
+                <input type="radio" class="sauce" name="Sauce" value="Mayo" />
+                <div class="col-md-4 text-center selection radio" id="Mayo" name="Mayo" value="Mayo">
+                    <div class="header">
+                        <h4>Mayo</h4>
+                    </div>
+                    <img src="~/Images/OrderImages/Sauce/Mayo.jpg" class="thumbnail center-block" />
+                    <div class="body">Europeans swear by it!</div>
+                </div>
+            </label>
+            <label class="labl">
+                <input type="radio" class="sauce" name="Sauce" value="Thousand Island" />
+                <div class="col-md-4 text-center selection radio" id="ThousandIsland" name="ThousandIsland" value="Thousand Island">
+                    <div class="header">
+                        <h4>Thousand Island</h4>
+                    </div>
+                    <img src="~/Images/OrderImages/Sauce/ThousandIsland.jpeg" class="thumbnail center-block" />
+                    <div class="body">
+                        A classic American salad dressing and condiment that has a little bit of everything
+                        in it, and goes with everything a little bit.
+                    </div>
+                </div>
+            </label>
+            <label class="labl">
+                <input type="radio" class="sauce" name="Sauce" value="Gravy" />
+                <div class="col-md-4 text-center selection radio" id="Gravy" name="Gravy" value="Gravy">
+                    <div class="header">
+                        <h4>Gravy</h4>
+                    </div>
+                    <img src="~/Images/OrderImages/Sauce/Gravy.jpg" class="thumbnail center-block" />
+                    <div class="body">Oh, those crazy Canadians!</div>
+                </div>
+            </label>
+            <label class="labl">
+                <input type="radio" class="sauce" name="Sauce" value="Cheese" />
+                <div class="col-md-4 text-center selection radio" id="Cheese" name="Cheese" value="Cheese">
+                    <div class="header">
+                        <h4>Cheese</h4>
+                    </div>
+                    <img src="~/Images/OrderImages/Sauce/Cheese.jpg" class="thumbnail center-block" />
+                    <div class="body">Oh, those crazy Americans!</div>
+                </div>
+            </label>
+            <label class="labl">
+                <input type="radio" class="sauce" name="Sauce" value="Malt Vinegar" />
+                <div class="col-md-4 text-center selection radio" id="MaltVinegar" name="MaltVinegar" value="Malt Vinegar">
+                    <div class="header">
+                        <h4>Malt Vinegar</h4>
+                    </div>
+                    <img src="~/Images/OrderImages/Sauce/MaltVinegar.jpg" class="thumbnail center-block" />
+                    <div class="body">Oh, those crazy Brits!</div>
                 </div>
             </label>
         </div>
 
+        @*Topping*@
         <div class="row img-rounded orderContainer" style="background-color:rgba(218, 165, 32, 0.85)" id="toppingContainer">
             <h2 class="text-center">Choose Your Toppings</h2>
             <label class="labl">
@@ -174,7 +350,7 @@
                         <h4>None</h4>
                     </div>
                     <img src="~/Images/OrderImages/Topping/None.jpg" class="thumbnail center-block" />
-                    <div class="body">Description</div>
+                    <div class="body">Pure, unadulterated fries.</div>
                 </div>
             </label>
         </div>

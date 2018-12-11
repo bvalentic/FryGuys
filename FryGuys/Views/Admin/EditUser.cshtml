@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "EditUser";
+}
+
+<h2>EditUser</h2>
+
+@model FryGuys.Models.User
+
+<div class="container-fluid img-rounded" style="background-color:rgba(150, 150, 150, 0.95)">
+    <form action="~/Admin/SaveExistingUser/" method="post" onsubmit="return confirmChanges()">
+        <input type="hidden" name="UserID" value="@Model.UserID" />
+        <label>First Name:</label>
+        <input type="text" name="FirstName" value="@Model.FirstName" id="firstName" pattern="[a-zA-Z]+" required /> <br />
+        <label>Last Name:</label>
+        <input type="text" name="LastName" value="@Model.LastName" id="lastName" pattern="[a-zA-Z]+" required /> <br />
+        <label>Age:</label>
+        <input type="number" name="Age" value="@Model.Age" required /> <br />
+        <label>Birthday:</label>
+        <input type="date" name="Birthday" value="@Model.Birthday" required /> <br />
+        <label>Phone Number:</label>
+        <input type="text" name="Phone" value="@Model.Phone" id="phone" pattern="[\d]{3}-[\d]{3}-[\d]{4}" /> <br />
+
+        <lable>Gender:</lable> <br />
+        <label>Male</label>
+        @if (Model.Gender.Contains("Male"))
+        {
+            <input type="radio" name="Gender" value="Male" required checked /> <br />
+        }
+        else
+        {
+            <input type="radio" name="Gender" value="Male" required /> <br />
+        }
+        <label>Female</label>
+        @if (Model.Gender.Contains("Female"))
+        {
+            <input type="radio" name="Gender" value="Female" checked /> <br />
+        }
+        else
+        {
+            <input type="radio" name="Gender" value="Female" /> <br />
+        }
+        <label>Other</label>
+        @if (Model.Gender.Contains("Other"))
+        {
+            <input type="radio" name="Gender" value="Other" checked /> <br />
+        }
+        else
+        {
+            <input type="radio" name="Gender" value="Other" /> <br />
+        }
+        <label>Prefer not to answer</label>
+        @if (Model.Gender.Contains("Prefer not to answer"))
+        {
+            <input type="radio" name="Gender" value="Prefer not to answer" checked /> <br />
+        }
+        else
+        {
+            <input type="radio" name="Gender" value="Prefer not to answer" /> <br />
+        }
+
+        <label>Username:</label>
+        <input type="text" name="Username" value="@Model.Username" required /> <br />
+        <label>Email Address:</label>
+        <input type="text" name="Email" id="email" value="@Model.Email"
+               pattern="([a-zA-Z0-9_\-\.]+)&#64([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required /> <br />
+
+        <label>Get promo emails?</label>
+        <input type="checkbox" name="GetEmail" id="getEmail" value="true" checked /> <br />
+
+        <label>Password:</label>
+        <input type="text" name="Password" id="password" value="@Model.Password"
+               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$" required /> <br />
+
+        <input type="submit" class="btn-info" />
+        <label class="btn-default"><a href="~/Admin/ViewUsers/">Back</a></label>
+    </form>
+</div>
+<script type="text/javascript" src="~/JavaScript.js"></script>

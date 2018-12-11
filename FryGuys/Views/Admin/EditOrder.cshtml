@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "Edit Order";
+}
+
+@model FryGuys.Models.Fry
+
+<div class="container-fluid img-rounded" style="background-color:rgba(150, 150, 150, 0.95)">
+    <h2>Edit Order</h2>
+
+    <form action="~/Admin/SaveExistingOrder/" method="post" onsubmit="return confirmChanges()">
+        <input type="hidden" name="FryID" value="@Model.FryID" />
+        <fieldset>
+            <h4>Potato:</h4>
+            <label>Yukon Gold</label>
+            <input type="radio" name="Potato" value="Yukon Gold" required />
+            <label>Russet</label>
+            <input type="radio" name="Potato" value="Russet" />
+            <label>Sweet Potato</label>
+            <input type="radio" name="Potato" value="Sweet Potato" />
+        </fieldset>
+        <fieldset>
+            <h4>Cut:</h4>
+            <label>Standard</label>
+            <input type="radio" name="Cut" value="Standard" required />
+            <label>Crinkle Cut</label>
+            <input type="radio" name="Cut" value="Crinkle Cut" />
+            <label>Waffle</label>
+            <input type="radio" name="Cut" value="Waffle" />
+            <label>Steak</label>
+            <input type="radio" name="Cut" value="Steak" />
+            <label>Shoestring</label>
+            <input type="radio" name="Cut" value="Shoestring" />
+            <label>Wedge</label>
+            <input type="radio" name="Cut" value="Wedge" />
+        </fieldset>
+        <fieldset>
+            <h4>Cook:</h4>
+            <label>Undercooked</label>
+            <input type="radio" name="Cook" value="Undercooked" required />
+            <label>Standard</label>
+            <input type="radio" name="Cook" value="Standard" />
+            <label>Well Done</label>
+            <input type="radio" name="Cook" value="Well Done" />
+        </fieldset>
+        <fieldset>
+            <h4>Seasonings:</h4>
+            <label>None</label>
+            <input type="radio" name="Season" value="None" required />
+            <label>Salt</label>
+            <input type="radio" name="Season" value="Salt" />
+            <label>Pepper</label>
+            <input type="radio" name="Season" value="Pepper" />
+            <label>Garlic Powder</label>
+            <input type="radio" name="Season" value="Garlic Powder" />
+            <label>Old Bay</label>
+            <input type="radio" name="Season" value="Old Bay" />
+            <label>Cajun</label>
+            <input type="radio" name="Season" value="Cajun" />
+            <label>Not-Crack</label>
+            <input type="radio" name="Season" value="Not-Crack" />
+        </fieldset>
+        <fieldset>
+            <h4>Sauce:</h4>
+            <label>None</label>
+            <input type="radio" name="Sauce" value="None" required />
+            <label>Ketchup</label>
+            <input type="radio" name="Sauce" value="Ketchup" />
+            <label>Mayo</label>
+            <input type="radio" name="Sauce" value="Mayo" />
+            <label>Thousand Island</label>
+            <input type="radio" name="Sauce" value="Thousand Island" />
+            <label>Gravy</label>
+            <input type="radio" name="Sauce" value="Gravy" />
+            <label>Cheese</label>
+            <input type="radio" name="Sauce" value="Cheese" />
+            <label>Malt Vinegar</label>
+            <input type="radio" name="Sauce" value="Malt Vinegar" />
+        </fieldset>
+        <fieldset>
+            <h4>Toppings:</h4>
+            <label>None</label>
+            <input type="radio" name="Topping" value="None" required />
+        </fieldset>
+
+        <input type="submit" class="btn-info" />
+        <label class="btn-default"><a href="~/Admin/ViewOrders/">Back</a></label>
+    </form>
+</div>

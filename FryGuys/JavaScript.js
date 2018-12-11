@@ -121,8 +121,21 @@ function findValue(string) {
         }
     }
 
-    //alert(checkedValue);
     return checkedValue; 
-
 }
 
+function confirmChanges() {
+    if (confirm("Click OK to confirm:")) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function disableSeasoning() {
+    if (document.getElementById("SeasonNone").checked === true) {
+        document.getElementsByClassName("Season").checked = false;
+        document.getElementById("Season").disabled = true;
+    }
+}

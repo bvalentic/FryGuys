@@ -183,7 +183,12 @@
     <Content Include="Images\OrderImages\Cook\Undercooked.jpeg" />
     <Content Include="Images\OrderImages\Cook\WellDone.jpg" />
     <Content Include="Images\OrderImages\Cut\CrinkleCut.jpg" />
+    <Content Include="Images\OrderImages\Cut\Curly.jpg" />
+    <Content Include="Images\OrderImages\Cut\Shoestring.jpg" />
     <Content Include="Images\OrderImages\Cut\StandardCut.jpg" />
+    <Content Include="Images\OrderImages\Cut\Steak.jpg" />
+    <Content Include="Images\OrderImages\Cut\Waffle.jpg" />
+    <Content Include="Images\OrderImages\Cut\Wedge.jpg" />
     <Content Include="Images\OrderImages\Potatoes\Russet.jpeg" />
     <Content Include="Images\OrderImages\Potatoes\SweetPotato.jpg" />
     <Content Include="Images\OrderImages\Potatoes\YukonGold.jpeg" />
@@ -210,6 +215,7 @@
     <Content Include="Models\FryGuysDB.edmx.diagram">
       <DependentUpon>FryGuysDB.edmx</DependentUpon>
     </Content>
+    <Content Include="Images\OrderImages\Cut\Steak.webp" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -252,6 +258,10 @@
     <Content Include="Views\Admin\ViewUsers.cshtml" />
     <Content Include="Views\Admin\ViewOrders.cshtml" />
     <Content Include="Views\Admin\AddUser.cshtml" />
+    <Content Include="Views\Admin\EditUser.cshtml" />
+    <Content Include="Views\Admin\DeleteUser.cshtml" />
+    <Content Include="Views\Admin\AddOrder.cshtml" />
+    <Content Include="Views\Admin\EditOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -3,6 +3,7 @@
 }
 <div class="container-fluid img-rounded" style="background-color:rgba(150, 150, 150, 0.95)">
     <h2>View Users</h2>
+    @Html.Raw(TempData["msg"])
 
     <table class="table">
         <thead>
@@ -37,7 +38,7 @@
                     <td>@user.GetEmail</td>
                     <td>@user.Password</td>
                     <td><a href="~/Admin/EditUser?UserID=@user.UserID" class="btn-default">Edit user info</a></td>
-                    <td><a href="~/Admin/DeleteUser?UserID=@user.UserID" class="btn-danger">Delete user</a></td>
+                    <td><a href="~/Admin/DeleteUser?UserID=@user.UserID" class="btn-danger" onclick="return confirmChanges()">Delete user</a></td>
                 </tr>
             }
             <tr>

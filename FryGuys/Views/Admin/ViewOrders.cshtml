@@ -3,6 +3,7 @@
 }
 <div class="container-fluid img-rounded" style="background-color:rgba(150, 150, 150, 0.95)">
     <h2>View Orders</h2>
+    @Html.Raw(TempData["msg"])
 
     <table class="table">
         <thead>
@@ -29,11 +30,11 @@
                     <td>@order.Sauce</td>
                     <td>@order.Topping</td>
                     <td><a href="~/Admin/EditOrder?FryID=@order.FryID" class="btn-primary">Edit order info</a></td>
-                    <td><a href="~/Admin/DeleteOrder?FryID=@order.FryID" class="btn-warning">Delete order</a></td>
+                    <td><a href="~/Admin/DeleteOrder?FryID=@order.FryID" class="btn-danger" onclick="return confirmChanges()">Delete order</a></td>
                 </tr>
             }
             <tr>
-                <td><a href="~/Admin/AddUser" class="btn-primary">Add order</a></td>
+                <td><a href="~/Admin/AddOrder" class="btn-primary">Add order</a></td>
             </tr>
         </tbody>
     </table>
