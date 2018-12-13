@@ -1,15 +1,119 @@
 ﻿using FryGuys.Models;
-using System;
-using System.Collections.Generic;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
 namespace FryGuys.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
+        //set up instance of usermanager
+        public UserManager<IdentityUser> UserManager =>
+            HttpContext.GetOwinContext().Get<UserManager<IdentityUser>>();
+
+        [AllowAnonymous]
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<ActionResult> Register(RegisterModel registerUser)
+        {
+            if (ModelState.IsValid)
+            {
+                var IdentityResult = await UserManager.CreateAsync(new IdentityUser(registerUser.UserName), registerUser.Password);
+
+                if (IdentityResult.Succeeded)
+                {
+
+                    //if the model is valid and it passes identity, we add the user to our User table as well...
+
+                    FryGuysDBEntities DB = new FryGuysDBEntities();
+
+                    //create the user based on our user model and assign the properties from the register user to it...
+                    var newUser = new User();
+
+                    newUser.FirstName = registerUser.FirstName;
+                    newUser.LastName = registerUser.LastName;
+                    newUser.Age = registerUser.Age;
+                    newUser.Username = registerUser.UserName;
+                    newUser.Email = registerUser.UserName;
+                    newUser.Password = registerUser.Password;
+
+                    //add the user to the ORM and save changes...
+                    DB.Users.Add(newUser);
+                    DB.SaveChanges();
+
+                    //return home view
+                    return RedirectToAction("Main", "Admin");
+                }
+
+                ModelState.AddModelError("", IdentityResult.Errors.FirstOrDefault());
+
+                return View();
+
+            }
+
+            return View();
+
+        }
+
+        [AllowAnonymous]
+        public ActionResult Signin()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult Signin(LoginModel loginModel)
+        {
+            if (ModelState.IsValid)
+            {
+
+                var authenticationManager = HttpContext.GetOwinContext().Authentication;
+
+                IdentityUser user = UserManager.Find(loginModel.UserName, loginModel.Password);
+
+                if (user != null)
+                {
+
+                    var ident = UserManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
+                    //use the instance that has been created.
+                    authenticationManager.SignIn(new AuthenticationProperties { IsPersistent = false }, ident);
+
+                    return RedirectToAction("Main");
+
+                }
+            }
+
+            ModelState.AddModelError("", "Invalid login");
+
+            return View(loginModel);
+        }
+
+        public ActionResult Confirm()
+        {
+            string userName = User.Identity.Name;
+
+            FryGuysDBEntities DB = new FryGuysDBEntities();
+
+            User currentUser = DB.Users.FirstOrDefault(i => i.Username == userName);
+
+            return View(currentUser);
+        }
+
         // GET: Admin
+        
         public ActionResult Main()
         {
             return View();

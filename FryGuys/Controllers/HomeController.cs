@@ -69,13 +69,16 @@ namespace FryGuys.Controllers
         {
             FryGuysDBEntities DB = new FryGuysDBEntities();
 
-            if (fry != null)
+            if (ModelState.IsValid)
             {
                 DB.Fries.Add(fry);
                 DB.SaveChanges();
+                return RedirectToAction("OrderConfirm", fry);
             }
 
-            return RedirectToAction("OrderConfirm", fry);
+            return RedirectToAction("Order");
+
+            
         }
 
         public ActionResult OrderConfirm(Fry fry)

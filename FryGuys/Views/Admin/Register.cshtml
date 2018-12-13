@@ -1,0 +1,38 @@
+﻿@model FryGuys.Models.RegisterModel
+
+<div class="container-fluid img-rounded" style="background-color:rgba(150, 150, 150, 0.95)">
+    <h2>Register</h2>
+
+    @using (Html.BeginForm("Register", "Admin", FormMethod.Post))
+    {
+        @Html.ValidationSummary()
+        @Html.LabelFor(x => x.UserName) @Html.TextBoxFor(x => x.UserName)
+        <br />
+        @Html.LabelFor(x => x.Email) @Html.TextBoxFor(x => x.Email)
+        <br />
+        @Html.LabelFor(x => x.Password) @Html.PasswordFor(x => x.Password)
+        <br />
+        @Html.LabelFor(x => x.ConfirmPassword) @Html.PasswordFor(x => x.ConfirmPassword)
+        <br />
+
+
+
+        <!--Below is just for user table, only above is used for identity framework-->
+
+        @Html.LabelFor(x => x.FirstName) @Html.TextBoxFor(x => x.FirstName)
+        <br />
+        @Html.LabelFor(x => x.LastName) @Html.TextBoxFor(x => x.LastName)
+        <br />
+        @Html.LabelFor(x => x.Age) @Html.TextBoxFor(x => x.Age)
+        <br />
+
+
+
+        <input class="btn btn-primary" type="submit" value="Register" />
+    }
+
+    <p style="margin-top: 50px" class="alert alert-info">
+        <strong>Already have an account?</strong> @Html.ActionLink("Click here", "SignIn") to sign in with an existing account.
+    </p>
+
+</div>

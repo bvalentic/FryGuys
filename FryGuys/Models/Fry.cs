@@ -11,10 +11,12 @@ namespace FryGuys.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Fry
     {
         public int FryID { get; set; }
+        [Required]
         public string Potato { get; set; }
         public string Cut { get; set; }
         public string Cook { get; set; }

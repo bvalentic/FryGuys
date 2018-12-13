@@ -1,0 +1,22 @@
+﻿@model FryGuys.Models.LoginModel
+
+<div class="container-fluid img-rounded" style="background-color:rgba(150, 150, 150, 0.95)">
+    <h2>Sign In</h2>
+
+    @using (Html.BeginForm("SignIn", "Admin", FormMethod.Post))
+    {
+        @Html.ValidationSummary()
+        @Html.LabelFor(x => x.UserName) @Html.TextBoxFor(x => x.UserName)
+        <br />
+        @Html.LabelFor(x => x.Password) @Html.PasswordFor(x => x.Password)
+        <br />
+
+
+        <input class="btn btn-primary" type="submit" value="Login" />
+    }
+
+    <p style="margin-top: 50px" class="alert alert-info">
+        <strong>Don't have an account?</strong> @Html.ActionLink("Click here", "Register") to create a new account.
+    </p>
+
+</div>
