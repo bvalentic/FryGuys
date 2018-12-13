@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
+using Microsoft.Owin.Security.Cookies;
 using Owin;
 
 [assembly: OwinStartup(typeof(FryGuys.Startup))]
@@ -29,6 +30,12 @@ namespace FryGuys
             //add to the owin context UserManager the identity user dependency using the user store
             app.CreatePerOwinContext<UserManager<IdentityUser>>(
                 (opt, cont) => new UserManager<IdentityUser>(cont.Get<UserStore<IdentityUser>>()));
+
+            app.UseCookieAuthentication(new CookieAuthenticationOptions
+            {
+                AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
+                LoginPath = new PathString("/Admin/SignIn")
+            });
         }
     }
 }
